@@ -9,6 +9,11 @@ void main() {
 class MyApp extends StatelessWidget {
    MyApp({super.key});
 
+   //Function & method
+   void uerTapped(){
+     print("User Tapped.");
+   }
+
 
 
   @override
@@ -17,31 +22,17 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         //Align the container on above another
-        body: Stack(
-          alignment: Alignment.bottomRight,
-          children: [
-            //big box
-            Container(
-              height: 300,
-              width: 300,
-              color: Colors.deepPurple,
-            ),
-
-            //medium box
-            Container(
+        body: Center(
+          child: GestureDetector(
+            onTap: uerTapped,
+            child: Container(
               height: 200,
               width: 200,
-              color: Colors.deepPurple[400],
-            ),
-
-            //small box
-            Container(
-              height: 100,
-              width: 100,
               color: Colors.deepPurple[200],
-            )
-
-          ],
+              child: Center(child: Text("Tap me!"),
+              ),
+            ),
+          ),
         )
       ),
     );
