@@ -25,24 +25,25 @@ class MyApp extends StatelessWidget {
         body: Column(
           children: [
             //1st Box
-            Container(
-              height: 300,
-              width: 300,
-              color: Colors.blue,
+            Expanded(
+              child: Container(
+                color: Colors.blue,
+              ),
             ),
 
             //2nd Box
-            Container(
-              height: 200,
-              width: 200,
-              color: Colors.black,
+            Expanded(
+              flex: 3,
+              child: Container(
+                color: Colors.black,
+              ),
             ),
 
             //3rd Box
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.amber,
+            Expanded(
+              child: Container(
+                color: Colors.amber,
+              ),
             )
           ],
         ),
