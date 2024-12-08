@@ -7,45 +7,21 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+   MyApp({super.key});
+
+  List names =["Mitch", "Sharon", "Vince"];
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.purple[200],
-        appBar: AppBar(
-          title: Text("My App Bar"),
-          backgroundColor: Colors.deepPurple,
-          elevation: 0,
-          leading: Icon(Icons.menu),
-          actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
-        ),
-        body: Column(
-          children: [
-            //1st Box
-            Expanded(
-              child: Container(
-                color: Colors.blue,
-              ),
-            ),
+        body: ListView.builder(
+          itemCount: names.length,
+          itemBuilder: (context,index)=>ListTile(
+            title: Text(names[index]),
+          ),
 
-            //2nd Box
-            Expanded(
-              flex: 3,
-              child: Container(
-                color: Colors.black,
-              ),
-            ),
-
-            //3rd Box
-            Expanded(
-              child: Container(
-                color: Colors.amber,
-              ),
-            )
-          ],
         ),
       ),
     );
